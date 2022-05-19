@@ -3,19 +3,21 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime
 import smtplib
-import json
 import csv
 import pymysql
 import os
 
 
 #Variables entorno
-username = os.environ.get('USER_MAIL', 'robert20.25.escom@gmail.com')
-password = os.environ.get('PASS_MAIL', 'ordsknkmbsobtxgp')
-host=os.environ.get('MYSQL_HOST', 'localhost')
+username = os.environ.get('USER_MAIL', 'your user mail')
+password_mail = os.environ.get('PASS_MAIL', 'your password mail')
+sender_mail = os.environ.get('SENDER_MAIL', 'your sender mail')
+receiver_mail = os.environ.get('RECEIVER_MAIL', 'your receiver mail')
+host=os.environ.get('MYSQL_HOST', 'your database host')
 user=os.environ.get('MYSQL_USER', 'root')
-password=os.environ.get('MYSQL_PASSWORD', 'password')
-db=os.environ.get('MYSQL_DB', 'stori')
+password=os.environ.get('MYSQL_PASSWORD', 'your password database')
+db=os.environ.get('MYSQL_DB', 'your database')
+
 
 
 #Función que lee el archivo csv
@@ -61,13 +63,12 @@ def save_data(data):
 
 
 #Configuración para envio mail
-content = open('config/email.json')
-config = json.load(content)
-email = config['username']
-password = config['password']
 
-sender = 'robert20.25.escom@gmail.com'
-receiver = 'roberto.martinez@claroshop.com'
+email = username
+password = password_mail
+
+sender = sender_mail
+receiver = receiver_mail
 subject = "Balance"
 
 #Función que envía el mail 
@@ -75,7 +76,7 @@ def send_mail():
     multipart = MIMEMultipart()
     multipart['Subject'] = 'Balance'
     multipart['From'] = 'stori@stori.com'
-    multipart['To'] = 'robert20.25.escom@gmail.com'
+    multipart['To'] = receiver_mail
    
     multipart.attach(MIMEText(temp, 'html'))
  
