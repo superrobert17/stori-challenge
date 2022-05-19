@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+
+  app:
+    image: superrobert17/app-stori
+    ports: 
+      - 5000:5000
+    environment:
+      USER_MAIL: "robert20.25.escom@gmail.com"
+      PASS_MAIL: "ordsknkmbsobtxgp"
+      MYSQL_HOST: "mysql"
+      MYSQL_USER: "root"
+      MYSQL_PASSWORD: "secret"
+      MYSQL_DB: "stori"
+
+  mysql:
+    image: mysql:8.0.29
+    volumes: 
+      - ./stori.sql:/docker-entrypoint-initdb.d/stori.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: stori
+    
