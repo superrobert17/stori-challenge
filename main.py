@@ -9,14 +9,15 @@ import os
 
 
 #Variables entorno
-username = os.environ.get('USER_MAIL', 'robert20.25.escom@gmail.com')
-password_mail = os.environ.get('PASS_MAIL', 'ordsknkmbsobtxgp')
-sender_mail = os.environ.get('SENDER_MAIL', 'robert20.25.escom@gmail.com')
-receiver_mail = os.environ.get('RECEIVER_MAIL', 'roberto.martinez@claroshop.com')
-host=os.environ.get('MYSQL_HOST', 'localhost')
+username = os.environ.get('USER_MAIL', 'your user mail')
+password_mail = os.environ.get('PASS_MAIL', 'your password mail')
+sender_mail = os.environ.get('SENDER_MAIL', 'your sender mail')
+receiver_mail = os.environ.get('RECEIVER_MAIL', 'your receiver mail')
+host=os.environ.get('MYSQL_HOST', 'your database host')
 user=os.environ.get('MYSQL_USER', 'root')
-password=os.environ.get('MYSQL_PASSWORD', 'password')
-db=os.environ.get('MYSQL_DB', 'stori')
+password=os.environ.get('MYSQL_PASSWORD', 'your password database')
+db=os.environ.get('MYSQL_DB', 'your database')
+
 
 
 #Función que lee el archivo csv

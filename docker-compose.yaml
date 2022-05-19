@@ -7,14 +7,14 @@ services:
     ports: 
       - 5000:5000
     environment:
-      USER_MAIL: "robert20.25.escom@gmail.com"
-      PASS_MAIL: "ordsknkmbsobtxgp"
-      SENDER_MAIL: "robert20.25.escom@gmail.com"
-      RECEIVER_MAIL: "roberto.martinez@claroshop.com"
+      USER_MAIL: "your user mail"
+      PASS_MAIL: "your password mail"
+      SENDER_MAIL: "your sender mail"
+      RECEIVER_MAIL: "your receiver mail"
       MYSQL_HOST: "mysql"
       MYSQL_USER: "root"
       MYSQL_PASSWORD: "secret"
-      MYSQL_DB: "stori"
+      MYSQL_DB: "db"
 
   mysql:
     image: mysql:8.0.29
